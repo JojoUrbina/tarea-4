@@ -1,51 +1,51 @@
-let contador=0;
-let contadorMaximo=0;
-let numeroFrecuente=0;
-let numeroPromedio=0;
-let sumaArray=0;
-const listaNumerica=[];
+let contador = 0;
+let contadorMaximo = 0;
+let numeroFrecuente = 0;
+let numeroPromedio = 0;
+let sumaArray = 0;
+const listaNumerica = [];
 function crearArrayLiHtml(elementoLiHtml,array){
-    for(let i=0;i<document.querySelectorAll(`${elementoLiHtml}`).length;i++){
+    for(let i = 0;i<document.querySelectorAll(`${elementoLiHtml}`).length;i++){
       array.push(document.querySelectorAll(`${elementoLiHtml}`)[i].innerText)
 }
 }
 
 function calcularPromedioArray(array){
-        for(let i=0;i<array.length;i++){
-         sumaArray +=Number(array[i])
+        for(let i = 0;i<array.length;i++){
+         sumaArray += Number(array[i])
 
     }
     
-     numeroPromedio= Number(sumaArray/array.length)
+     numeroPromedio = Number(sumaArray/array.length)
 }
 function generarNumeroFrecuenteArray(array){
     
     for(let a=0;a<array.length;a++){
         for(let b=0;b<array.length;b++){
-            if(array[a]===array[b]){
+            if(array[a] === array[b]){
                 contador++
             }
             if(contador>contadorMaximo){
-                contadorMaximo=contador
-                numeroFrecuente=array[a]
+                contadorMaximo = contador
+                numeroFrecuente = array[a]
 
             }
         }
-        contador=0;
+        contador = 0;
     }
-   contadorMaximo=0;
+   contadorMaximo = 0;
 
 }
 function generarNumeroMayor(array){
     
-    for(let a=0;a<array.length;a++){
+    for(let a = 0;a<array.length;a++){
         for(let b=0;b<array.length;b++){
-            if(Number(array[a])>=Number(array[b])){
+            if(Number(array[a]) >= Number(array[b])){
                 contador++
             }
             if(contador>contadorMaximo){
-                contadorMaximo=contador
-                numeroMayor=array[a]
+                contadorMaximo = contador
+                numeroMayor = array[a]
             }
         }
         contador=0;
@@ -56,19 +56,19 @@ function generarNumerosMenor(array){
     
     for(let a=0;a<array.length;a++){
         for(let b=0;b<array.length;b++){
-            if(Number(array[a])<=Number(array[b])){
+            if(Number(array[a]) <= Number(array[b])){
                 contador++
             }
             if(contador>contadorMaximo){
-                contadorMaximo=contador
-                numeroMenor=array[a]
+                contadorMaximo = contador
+                numeroMenor = array[a]
                 
             }
         }
-        contador=0;
+        contador = 0;
     }
 
- contadorMaximo=0;
+ contadorMaximo = 0;
 
 }
 
